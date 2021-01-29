@@ -6,12 +6,6 @@
 
 > Instructor: Dr. Behrouz Far (far@ucalgary.ca)
 
-> Teaching Assistants:
-
-> - Yousef Mehrdad Bibalan (yousef.mehrdadbibala@ucalgary.ca)
-> - Masoud Karimi Fatemi (masoud.karimifatemi@ucalgary.ca)
-> - Anja Slama (anja.slama@ucalgary.ca)
-
 > Department of Electrical and Computer Engineering
 
 > University of Calgary
@@ -80,7 +74,7 @@ While the JFreeChart system is not technically a stand-alone application, the de
 
 ALL students should ensure that they understand the concepts in this section before moving on to the rest of the assignment.
 
-1.  If you haven’t done so already, download the JFreeChart v2.0.zip file from D2L (under the assignment 3 folder).
+1.  If you haven’t done so already, download the JFreeChart v2.0.zip file from Github repository [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip).
 2.  Extract the contents of the .zip file into a known location.
 
 ## 2.1 CREATE AN ECLIPSE PROJECT
@@ -90,7 +84,7 @@ ALL students should ensure that they understand the concepts in this section bef
 3.  Ensure that _Java Project_ is selected and click _Next_.
 4.  The dialog should now be prompting for the project name. Enter _JFreeChart_Lab3_ in the _Project Name_ field.
 5.  Create a new project in your workspace, and then extract the source files
-    from the given JFreeChart folder (in D2L) and add the source files into the
+    from the given JFreeChart folder and add the source files into the
     source folder of your project.
 
 **NOTE:** You might need to follow the steps in assignment 2 for _Adding External Libraries_ so then you have the _External Libraries_ as well.
@@ -124,7 +118,13 @@ For the purpose of demonstrating the abilities of coverage tools, the test suite
 
 **Figure 3 - Import dialog with Assignment 2 test classes selected**
 
-The test classes selected are now included in the org.jfree.data package in the new project. BUT: please make sure this is the case and that the package name in your test class is defined as org.jfree.data.
+The test classes selected are now included in the org.jfree.data package in the new project. **_BUT: please make sure this is the case and that the package name in your test class is defined as org.jfree.data._**
+
+**Note**:
+
+- You should import jmock 2.x library as you did in Assignment 2
+- If you want to use junit 4.x, you should import junit 4.x libraries as you did in Assignment 2
+- You can find both libraries in [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip).
 
 # 3 INSTRUCTIONS
 
@@ -199,7 +199,7 @@ It is mandatory for all team members to attend the demo session and explain the 
 
 ## 5.2 JUNIT TEST SUITE (40%)
 
-The test suite will be required to be submitted as a ZIP file along with the lab report (digitally using D2L. Students will be graded on their unit tests. The grading criteria are as follows.
+The test suite will be required to be submitted as a ZIP file along with the lab report. Students will be graded on their unit tests. The grading criteria are as follows.
 
 | Marking Scheme                                                                                                                                                                                             |     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
