@@ -1,6 +1,5 @@
 **SENG 438 - Software Testing, Reliability, and Quality**
 
-**Code Coverage Measurement & Test Adequacy Assessment**
 
 > Instructor: Dr. Behrouz Far (far@ucalgary.ca)
 
