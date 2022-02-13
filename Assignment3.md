@@ -4,7 +4,7 @@
 
 **Code Coverage Measurement & Test Adequacy Assessment**
 
-> Instructor: Dr. Behrouz Far (far@ucalgary.ca)
+> Instructor: Dr. Behrouz Far (far@ucalgary.ca) and Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
 
 > Department of Electrical and Computer Engineering
 
@@ -12,7 +12,17 @@
 
 Due Date: TBD
 
-> **Summary:** > ![](media/0summary.png)
+> **Summary:** > 
+- Download the new version of JFreeChart from [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip). In this assignment you will have access to the source code of JFreeChart. Create a project in Eclipse and add the source into your project. 
+- Import the test cases that you have developed in assignment2.
+- Calculate the control flow coverage metrics using appropriate tools.
+- Explain the pros and cons of the tools you are using and metrics you are reporting.
+- Design new test cases (using white-box approach) to increase the coverage for each class under test to meet the minimum coverage criteria described in the document. Classes to be tested are 
+    - org.jfree.data.DataUtilities
+    - org.jfree.data.Range
+- Dataflow coverage needs to be calculated manually.
+- Lab report + developed test cases must be submitted as outcome of this assignment.
+- All steps must be done as a teamwork.
 
 # 1 INTRODUCTION
 
@@ -44,13 +54,13 @@ Some coverage tools are listed below. You are free to choose your tool from that
 
 **List of code coverage tools:**
 
+- **EclEmma** [(http://www.eclemma.org/](http://www.eclemma.org/)) --> (recommended tool)
+
 - **CodeCover** [(http://codecover.org/](http://codecover.org/))
 
 - **Clover** ([http://www.atlassian.com/software/clover](http://www.atlassian.com/software/clover))
 
 - **JaCoCo** [(http://www.eclemma.org/jacoco/](http://www.eclemma.org/jacoco/))
-
-- **EclEmma** [(http://www.eclemma.org/](http://www.eclemma.org/))
 
 - **Coverlipse** [(http://coverlipse.sourceforge.net/](http://coverlipse.sourceforge.net/))
 
@@ -82,10 +92,11 @@ ALL students should ensure that they understand the concepts in this section bef
 1.  Open Eclipse.
 2.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
 3.  Ensure that _Java Project_ is selected and click _Next_.
-4.  The dialog should now be prompting for the project name. Enter _JFreeChart_Lab3_ in the _Project Name_ field.
-5.  Create a new project in your workspace, and then extract the source files
-    from the given JFreeChart folder and add the source files into the
-    source folder of your project.
+4.  The dialog should now be prompting for the project name. Enter _JFreeChart_Lab3_ in the _Project Name_ field and click _Finish_
+5.  Right click on the src folder of your project and click _import_
+6.  In the _Import_ dialog, select the _File System_ option (in the _General_ category) and click _Next_.
+7.  In the new panel on the _Import_ dialog, click on the _Browse…_ button, then navigate to the JFreeChart 1.0.19 directory and select _source_ folder.
+8.  Expand the source folder in the left panel and select _org_, then click on _Finish_ button. You should see the same panel as Figure 2.
 
 **NOTE:** You might need to follow the steps in assignment 2 for _Adding External Libraries_ so then you have the _External Libraries_ as well.
 
@@ -93,11 +104,15 @@ ALL students should ensure that they understand the concepts in this section bef
 
 **Figure 1 - New Java Project dialog with name and source path filled in**
 
-6.  The project (SUT) is now set up and ready for testing. Verify that all the sources and reference libraries are shown as in Figure 2 below.
+![](media/3.JPG)
+
+**Figure 2 - Import Source**
+
+6.  The project (SUT) is now set up and ready for testing.
 
 ![](media/2.jpg)
 
-**Figure 2 - Packages and archives that should be included in the newly-created project**
+**Figure 3 - Part of packages and archives that should be included in the newly-created project**
 
 ## 2.2 IMPORT A TEST SUITE
 
@@ -125,6 +140,11 @@ The test classes selected are now included in the org.jfree.data package in the 
 - You should import jmock 2.x library as you did in Assignment 2
 - If you want to use junit 4.x, you should import junit 4.x libraries as you did in Assignment 2
 - You can find both libraries in [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip).
+- To run EclEmma code coverage on Eclipse, select coverage button> Coverage As> JUnit Test. Figure 4
+
+![](media/4.JPG)
+
+**Figure 4 - Run EclEmma code coverage tool**
 
 # 3 INSTRUCTIONS
 
