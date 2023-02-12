@@ -9,18 +9,6 @@
 
 Due Date: Check D2L for the submission deadline.
 
-> **Summary:** > 
-- Download the new version of JFreeChart from [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip). In this assignment you will have access to the source code of JFreeChart. Create a project in Eclipse and add the source into your project. 
-- Import the test cases that you have developed in assignment2.
-- Calculate the control flow coverage metrics using appropriate tools.
-- Explain the pros and cons of the tools you are using and metrics you are reporting.
-- Design new test cases (using white-box approach) to increase the coverage for each class under test to meet the minimum coverage criteria described in the document. Classes to be tested are 
-    - org.jfree.data.DataUtilities
-    - org.jfree.data.Range
-- Dataflow coverage needs to be calculated manually.
-- Lab report + developed test cases must be submitted as outcome of this assignment.
-- All steps must be done as a teamwork.
-
 # 1 Introduction
 
 This assignment has a similar focus to the previous assignment, as it is once again unit testing. Unit testing will be performed using JUnit [3] in Eclipse [1]. As with the previous assignment, students will start by familiarizing themselves with the usage of the testing tools followed by implementation (enhancement) of the test suite. The major difference between the testing being performed in this assignment and the previous assignment (\#2) is that this assignment shows the students a different technique (white-box coverage criteria) in deciding what test cases to develop.
