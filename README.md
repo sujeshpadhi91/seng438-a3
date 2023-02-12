@@ -1,5 +1,3 @@
-# seng438-assignment-3
+seng438-a3
 
-# Guidline
-- read [assignment guideline](seng438-assignment-3.md) 
-- commit and push output ([assignment output template](seng438-assignment-3--report-template.md))
+Read [the assignment guideline](seng438-a3.md) 

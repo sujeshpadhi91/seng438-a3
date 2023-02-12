@@ -1,20 +1,16 @@
 **SENG 438 - Software Testing, Reliability, and Quality**
-
-
 > **Assignment \#3**
+>   **Introduction to Testing and Defect (Bug) Tracking**
+>   Instructors: 
+>   -   Dr. Behrouz Far (far@ucalgary.ca)
+>   -   Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
+>   Department of Electrical and Software Engineering
+>   University of Calgary
 
-**Code Coverage Measurement & Test Adequacy Assessment**
-
-> Instructor: Dr. Behrouz Far (far@ucalgary.ca) and Dr. Kangsoo Kim (kangsoo.kim@ucalgary.ca)
-
-> Department of Electrical and Computer Engineering
-
-> University of Calgary
-
-Due Date: TBD
+Due Date: Check D2L for the submission deadline.
 
 > **Summary:** > 
-- Download the new version of JFreeChart from [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip). In this assignment you will have access to the source code of JFreeChart. Create a project in Eclipse and add the source into your project. 
+- Download the new version of JFreeChart from [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip). In this assignment you will have access to the source code of JFreeChart. Create a project in Eclipse and add the source into your project. 
 - Import the test cases that you have developed in assignment2.
 - Calculate the control flow coverage metrics using appropriate tools.
 - Explain the pros and cons of the tools you are using and metrics you are reporting.
@@ -25,11 +21,11 @@ Due Date: TBD
 - Lab report + developed test cases must be submitted as outcome of this assignment.
 - All steps must be done as a teamwork.
 
-# 1 INTRODUCTION
+# 1 Introduction
 
 This assignment has a similar focus to the previous assignment, as it is once again unit testing. Unit testing will be performed using JUnit [3] in Eclipse [1]. As with the previous assignment, students will start by familiarizing themselves with the usage of the testing tools followed by implementation (enhancement) of the test suite. The major difference between the testing being performed in this assignment and the previous assignment (\#2) is that this assignment shows the students a different technique (white-box coverage criteria) in deciding what test cases to develop.
 
-## 1.1 OBJECTIVES
+## 1.1 Objectives
 
 The objectives of this assignment are to introduce students to the concepts of determining the adequacy of a
 white-box test suite based on its coverage of the code. In white-box testing, it is important to measure the
@@ -44,11 +40,11 @@ After completing the assignment, students will be able:
 - To understand some of the benefits and drawbacks of measuring test adequacy with code coverage tools
 - To gain an understanding of how data-flow coverage works and be able to calculate it by hand
 
-## 1.2 THIS ASSIGNMENT IS A GROUP WORK
+## 1.2 Group work
 
-All the tasks of this assignment should be completed in group (as you formed in assignment 1). The report should also be completed as a group.
+All the tasks of this assignment should be completed in group. The report should also be completed as a group.
 
-## 1.3 TESTING TOOLS
+## 1.3 Testing Tools
 
 In addition to JUnit (used and described in Assignment 2), in this assignment you will use one or several Java-based code coverage tool(s).
 Some coverage tools are listed below. You are free to choose your tool from that list or outside. Note that not all of tools work with your specific setup and configurations. It is your responsibility to find a tool that does the job for you or use other versions of IDEs
@@ -69,26 +65,19 @@ Some coverage tools are listed below. You are free to choose your tool from that
 
 **NOTE:** most coverage tools have issues with mocking plug-ins. If you face problems that could not be solved. Replace your test that uses a mock with a test case that uses the actual dependent on components (only for the sake of simplicity).
 
-## 1.4 SYSTEM UNDER TEST
+## 1.4 System Under Test
 
-The system to be tested for this assignment is JFreeChart [2], the same SUT used in Assignment \#2. JFreeChart is an open source Java framework for chart calculation, creation and display. This framework supports many different (graphical) chart types, including pie charts, bar charts, line charts, histograms, and several other chart types. To get started with the JFreeChart system, download the “JFreeChart v2.0.zip” file and extract the entire archive to a known location. More information on how to get started with these files will be provided in the familiarization stage. Note that the versions of JFreeChart distributed for this assignment do not correspond with actual releases of JFreeChart, rather versions modified for the purposes of this assignment.
+The system to be tested for this assignment is JFreeChart [2], the same SUT used in Assignment \#2. The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to other Java applications. With this in mind, the API for JFreeChart is required to be relatively simple to understand, as it is intended to be used by developers as an open source off-the-shelf framework
 
-## 1.4.1 Purpose of the System
 
-The JFreeChart framework is intended to be integrated into other systems as a quick and simple way to add charting functionality to other Java applications. With this in mind, the API for JFreeChart is required to be relatively simple to understand, as it is intended to be used by developers as an open source off-the-shelf framework
-
-### 1.4.2 Usage of the System
-
-While the JFreeChart system is not technically a stand-alone application, the developers of JFreeChart have created several demo classes which can be executed to show some of the capabilities of the system. These demo classes have Demo appended to the class name. For the purpose of this assignment, full knowledge of the usage of the JFreeChart API is not particularly necessary. The framework is grouped into two main packages, (1) org.jfree.chart and (2) org.jfree.data. Each of these two packages is also divided into several other smaller packages. For the purpose of testing in this assignment, we will be focusing on the org.jfree.data package
-
-# 2 FAMILIARIZATION
+# 2 Familiarization
 
 ALL students should ensure that they understand the concepts in this section before moving on to the rest of the assignment.
 
-1.  If you haven’t done so already, download the JFreeChart v2.0.zip file from Github repository [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip).
+1.  If you haven’t done so already, download the JFreeChart v2.0.zip file from Github repository [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip).
 2.  Extract the contents of the .zip file into a known location.
 
-## 2.1 CREATE AN ECLIPSE PROJECT
+## 2.1 Create an Eclipse Project
 
 1.  Open Eclipse.
 2.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
@@ -100,22 +89,21 @@ ALL students should ensure that they understand the concepts in this section bef
 8.  Expand the source folder in the left panel and select _org_, then click on _Finish_ button. You should see the same panel as Figure 2.
 
 **NOTE:** You might need to follow the steps in assignment 2 for _Adding External Libraries_ so then you have the _External Libraries_ as well.
-
-![](media/1.jpg)
+<img src="media/1.jpg" alt="media/1.jpg" width="360"/>
 
 **Figure 1 - New Java Project dialog with name and source path filled in**
 
-![](media/3.JPG)
+<img src="media/3.jpg" alt="media/3.jpg" width="360"/>
 
 **Figure 2 - Import Source**
 
-6.  The project (SUT) is now set up and ready for testing.
+1.  The project (SUT) is now set up and ready for testing.
 
-![](media/2.jpg)
+<img src="media/2.jpg" alt="media/2.jpg" width="360"/>
 
 **Figure 3 - Part of packages and archives that should be included in the newly-created project**
 
-## 2.2 IMPORT A TEST SUITE
+## 2.2 Import a Test Suite
 
 For the purpose of demonstrating the abilities of coverage tools, the test suite developed in Assignment 2 will be used.
 
@@ -130,7 +118,7 @@ For the purpose of demonstrating the abilities of coverage tools, the test suite
 
     - Check your DataUtilities and Range test classes (something similar to what is shown in Figure 3 below). Then click _Finish_.
 
-![](media/3.png)
+<img src="media/3.jpg" alt="media/3.jpg" width="360"/>
 
 **Figure 3 - Import dialog with Assignment 2 test classes selected**
 
@@ -140,16 +128,16 @@ The test classes selected are now included in the org.jfree.data package in the 
 
 - You should import jmock 2.x library as you did in Assignment 2
 - If you want to use junit 4.x, you should import junit 4.x libraries as you did in Assignment 2
-- You can find both libraries in [./Assignment3-artifacts.zip](./Assignment3-artifacts.zip).
+- You can find both libraries in [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip).
 - To run EclEmma code coverage on Eclipse, select coverage button> Coverage As> JUnit Test. Figure 4
 
-![](media/4.JPG)
+<img src="media/4.jpg" alt="media/4.jpg" width="360"/>
 
 **Figure 4 - Run EclEmma code coverage tool**
 
-# 3 INSTRUCTIONS
+# 3 Instructions
 
-## 3.1 MEASURE CONTROL FLOW COVERAGE
+## 3.1 Measure Control Flow Coverage
 
 **_This design component_** requires that you and your team measure the adequacy of your test suite using one or more code coverage tools and report about the pros and cons of your metrics and tool choices
 
@@ -163,7 +151,7 @@ Measurement of code coverage is performed in two main steps. First, classes must
 
 > Read Section 3.3. for more details.
 
-## 3.2 MEASURE DATA FLOW COVERAGE MANUALLY
+## 3.2 Measure Data Flow Coverage Manually
 
 To become more familiar with data flow coverage and achieve a deeper understanding of how coverage tools work, calculate the DU-pair coverage for two methods, by hand. The methods to analyze are: DataUtilities.calculateColumnTotal and one method of your choice from the org.jfree.data.Range class (that you have a test set for, from Assignment 2). Calculate the DU-pair coverage by tracing through the execution of each of your test cases for these methods, manually. This will need to be included in your report. You need to report the followings per method:
 
@@ -177,7 +165,7 @@ To become more familiar with data flow coverage and achieve a deeper understandi
 
 - calculate the DU-Pair coverage.
 
-## 3.3 TEST SUITE DEVELOPMENT
+## 3.3 Test Suite Development
 
 In this section, you will be required to **design new unit tests** for two classes to increase their code coverage. The classes to be tested are: org.jfree.data.DataUtilities and org.jfree.data.Range. Note that although the focus in adequacy criteria has changed (it is now on source code), to develop new test cases the test oracle should still be derived from the requirements (as contained in the Javadocs of the SUT)
 
@@ -199,7 +187,7 @@ If you have divided the tests and completed them individually, then upon complet
 
 Measure the code coverage (only control flow metrics as listed above) of your entire test suite, and record detailed coverage information for each class and method. Include this information (preferably in a tabular form) in your lab report
 
-# 4 SUMMARY
+# 4 Summary
 
 Students should now have a good understanding of measuring test suite adequacy based on coverage of the SUT’s code. This should include an understanding of some of the different control flow and data flow coverage criteria, and the relative difficulty to satisfy these coverage criteria.
 Students should now have an idea of some of the trade-offs that occur when choosing different test suite adequacy criteria for testing.
@@ -218,7 +206,7 @@ It is mandatory for all team members to attend the demo session and explain the 
 
 **NOTE3: In the demo session, the TAs might ask each student questions related to any part of the assignment for the purpose of students’ assessment.**
 
-## 5.2 JUNIT TEST SUITE (40%)
+## 5.2 JUnit Test Suite (40%)
 
 The test suite will be required to be submitted along with the lab report. Students will be graded on their unit tests. The grading criteria are as follows.
 
@@ -228,9 +216,9 @@ The test suite will be required to be submitted along with the lab report. Stude
 | **Clarity** (are they easy to follow, through commenting or style, etc.?)                                                                                                                                  | 10% |
 | **Correctness** (do the tests actually test what they are intended to test?)                                                                                                                               | 15% |
 
-## 5.3 LAB REPORT (40%)
+## 5.3 Lab Report (40%)
 
-Students will be required to submit a report on their work in the assignment as a group. To be consistent, please use the template markdown file ([Assignment3-ReportTemplate.md](Assignment3-ReportTemplate.md)) provided online under the Assignment 3 folder. If desired, feel free to rename the sections, as long as the headings are still descriptive and accurate. In the report should be included.
+Students will be required to submit a report on their work in the assignment as a group. To be consistent, please use the template markdown file ([seng438-a3-team_number.md](seng438-a3-team_number.md)) provided online under the Assignment 3 folder. If desired, feel free to rename the sections, as long as the headings are still descriptive and accurate. In the report should be included.
 
 | Marking Scheme                                                                                                                                                                           |     |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
@@ -246,11 +234,11 @@ Students will be required to submit a report on their work in the assignment as 
 
 A portion of the grade for the lab report will be allocated to organization and clarity.
 
-# 6 ACKNOWLEDGEMENTS
+# 6 Acknowledgements
 
 This lab is part of a software-testing laboratory courseware available under a Creative Commons license.
 
-# 7 REFERENCES
+# 7 References
 
 1.  "Eclipse.org," Internet: [http://www.eclipse.org](http://www.eclipse.org/)
 
