@@ -64,30 +64,37 @@ ALL students should ensure that they understand the concepts in this section bef
 
 1.  If you haven’t done so already, download the JFreeChart v2.0.zip file from Github repository [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip).
 2.  Extract the contents of the .zip file into a known location.
+3.  After extracting the main zipped folder, go into the extracted folder and also extract any sub-folders (into the current location) if required.
 
 ## 2.1 Create an Eclipse Project
 
 1.  Open Eclipse.
 2.  Open the _New Project_ dialog by selecting the _File -\> New -\> Project_…
-3.  Ensure that _Java Project_ is selected and click _Next_.
-4.  The dialog should now be prompting for the project name. Enter _JFreeChart_Lab3_ in the _Project Name_ field and click _Finish_
+3.  Under the folder Java, ensure that _Java Project_ is selected and in Use and execution environment JRE click on vesrsion8 (or JavaSE-1.8) and then click _Next_.
+4.  The dialog should now be prompting for the project name. Enter _JFreeChart_Lab3_ in the _Project Name_ field and click _Finish_. Refer Figure 1.
 5.  Right click on the src folder of your project and click _import_
 6.  In the _Import_ dialog, select the _File System_ option (in the _General_ category) and click _Next_.
-7.  In the new panel on the _Import_ dialog, click on the _Browse…_ button, then navigate to the JFreeChart 1.0.19 directory and select _source_ folder.
-8.  Expand the source folder in the left panel and select _org_, then click on _Finish_ button. You should see the same panel as Figure 2.
+7.  In the new panel on the _Import_ dialog, click on the _Browse…_ button, then navigate to the JFreeChart 1.0.19 directory and select _source_ folder (do not double-click) and click on _Select Folder_ button.
+8.  Expand the source folder in the left panel and tick the checkbox of _org_, then click on _Finish_ button.
 
-**NOTE:** You might need to follow the steps in assignment 2 for _Adding External Libraries_ so then you have the _External Libraries_ as well.
 <img src="media/1.jpg" alt="media/1.jpg" width="360"/>
 
 **Figure 1 - New Java Project dialog with name and source path filled in**
 
-<img src="media/3.jpg" alt="media/3.jpg" width="360"/>
+### 2.1.1 Adding Necessary External Java Libraries
+**NOTE:** You might need to follow the steps in assignment 2 (section 2.2.2) for _Adding External Libraries_ so then you have the _External Libraries_ as well. You can add external libraries by going to the Properties of the Project. To access that first right-click on the _src_ -> Hover over the _Build Path_ -> Select _Configure Build Path_. Refer Figure 2
 
-**Figure 2 - Import Source**
-
-1.  The project (SUT) is now set up and ready for testing.
+1. You can add external libraries by going to the Properties of the Project. To access that first right-click on the _src_ -> Hover over the _Build Path_ -> Select _Configure Build Path_.
+2. The Java Settings dialog should now be displayed. This dialog has five tabs along the top: Source, Projects, Libraries, Order and Export and Module Dependencies. Move to the Libraries tab, and click the Add External JARs (or Libraries)… button.
+3. Select the jfreechart-1.0.19-demo.jar file from the known location that you already extracted in and click Open. Click Add External Libraries… again, this time add all the .jar files from the lib and lib/Jmock directory where you have unzipped the jfreechart-1.0.19.zip file. The Java Settings dialog should now look like Figure 2, below.
 
 <img src="media/2.jpg" alt="media/2.jpg" width="360"/>
+
+**Figure 2 - The Java Settings dialog after adding required archives**
+
+The project (SUT) is now set up and ready for testing.
+
+<img src="media/3.jpg" alt="media/3.jpg" width="360"/>
 
 **Figure 3 - Part of packages and archives that should be included in the newly-created project**
 
@@ -102,13 +109,13 @@ For the purpose of demonstrating the abilities of coverage tools, the test suite
 
     - In the _Import_ dialog, select the _File System_ option (in the _General_ category) and click _Next_.
 
-    - In the new panel on the _Import_ dialog, click on the _Browse…_ button to choose the directory you import your files from, then navigate to the directory from your previous assignment containing your test files for Range and DataUtilites. Click _OK_.
+    - In the new panel on the _Import_ dialog, click on the _Browse…_ button to choose the directory you import your files from, then navigate to the directory from your previous assignment containing your test files for Range and DataUtilites. Click _Select Folder_.
 
-    - Check your DataUtilities and Range test classes (something similar to what is shown in Figure 3 below). Then click _Finish_.
+    - Check your DataUtilities and Range test classes (something similar to what is shown in Figure 4 below). Then click _Finish_.
 
-<img src="media/3.jpg" alt="media/3.jpg" width="360"/>
+<img src="media/4.jpg" alt="media/4.jpg" width="360"/>
 
-**Figure 3 - Import dialog with Assignment 2 test classes selected**
+**Figure 4 - Import dialog with Assignment 2 test classes selected**
 
 The test classes selected are now included in the org.jfree.data package in the new project. **_BUT: please make sure this is the case and that the package name in your test class is defined as org.jfree.data._**
 
@@ -117,11 +124,11 @@ The test classes selected are now included in the org.jfree.data package in the 
 - You should import jmock 2.x library as you did in Assignment 2
 - If you want to use junit 4.x, you should import junit 4.x libraries as you did in Assignment 2
 - You can find both libraries in [./seng438-a3-artifacts.zip](./seng438-a3-artifacts.zip).
-- To run EclEmma code coverage on Eclipse, select coverage button> Coverage As> JUnit Test. Figure 4
+- To run EclEmma code coverage on Eclipse, select coverage button> Coverage As> JUnit Test. Figure 5
 
 <img src="media/4.jpg" alt="media/4.jpg" width="360"/>
 
-**Figure 4 - Run EclEmma code coverage tool**
+**Figure 5 - Run EclEmma code coverage tool**
 
 # 3 Instructions
 
